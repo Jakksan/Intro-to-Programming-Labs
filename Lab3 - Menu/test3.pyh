@@ -1,0 +1,114 @@
+import sys
+def main():
+    #Welcome
+    print("Welcome to the Online Menu!")
+
+    #Check for allergies
+    vegetarian = input("Are you a vegetarian?(yes or no)\n").lower()
+    kosher = input("Do you eat kosher?(yes or no)\n").lower()
+    eggAllergy = input("Do you have an egg allergy?(yes or no)\n").lower()
+
+    # Assign answers to boolean variables
+    bCanEatMeat = (vegetarian != ("yes" or "y"))
+    bKosher = (kosher == ("yes" or "y"))
+    bEggAllergy = (eggAllergy ==("yes" or "y"))
+
+     #food choices
+    A = 'A) $7.50 chicken and biscuits'
+    B = 'B) $8.25 pulled pork sandwich'
+    C = 'C) $8.00 blackened redfish'
+    D = 'D) $7.50 shrimp and grits'
+    E = 'E) $6.00 cheesy potato soup'
+    F = 'F) $6.50 southwest omelette'
+    G = 'G) $6.50 eggplant parmesan'
+    H = 'H) $8.25 ham benedict sliders'
+    I = 'A) $3.00 orange juice'
+    J = 'B) $2.50 sweet tea'
+    K = 'C) $1.25 bottled water'
+    ap = 7.50
+    bp = 8.25
+    cp = 8.00
+    dp = 7.50
+    ep = 6.00
+    fp = 6.50
+    gp = 6.50
+    hp = 8.25
+    ip = 3.00
+    jp = 2.50
+    kp = 1.25
+    vegList=[E,F,G]
+    vegAndKosher=[E,F,G]
+    # vegAndEggallergy=[E,G]
+    kosherList=[A,C,E,F,G]
+    eggAllergyList=[A,B,C,D,E,G]
+    eggAllergyAndKosher=[A,C,E,G]
+    #vegEggallergyAndKosher=[E,G]
+    defaultList=[A,B,C,D,E,F,G,H]
+    drinkList = [I,J,K]
+    if (bCanEatMeat==True) and (bKosher==True) and (bEggAllergy==True):
+        for food in eggAllergyAndKosher:
+            print(food)
+        choice = input("What food would you like?").lower()
+    elif (bCanEatMeat==True) and (bKosher==True) and (bEggAllergy==False):
+        for food2 in defaultList:
+            print(food2)
+        choice = input("What food would you like?").lower()
+    elif (bCanEatMeat==True) and (bKosher==False) and (bEggAllergy==True):
+        for food3 in eggAllergyList:
+            print(food3)
+        choice = input("What food would you like?").lower()
+    elif (bCanEatMeat==True) and (bKosher==False) and (bEggAllergy==False):
+        for food4 in defaultList:
+            print(food4)
+        choice = input("What food would you like?").lower()
+    elif (bCanEatMeat==False) and (bKosher==True) and (bEggAllergy==True):
+        for food5 in vegEggallergyAndKosher:
+            print(food5)
+        choice = input("What food would you like?").lower()
+    elif (bCanEatMeat==False) and (bKosher==True) and (bEggAllergy==False):
+        for food6 in vegAndKosher:
+            print(food6)
+        choice = input("What food would you like?").lower()
+    elif (bCanEatMeat==False) and (bKosher==False) and (bEggAllergy==True):
+        for food7 in vegAndEggallergy:
+            print(food7)
+        choice = input("What food would you like?").lower()
+    elif (bCanEatMeat==False) and (bKosher==False) and (bEggAllergy==False):
+        for food8 in vegList:
+            print(food8)
+        choice = input("What food would you like?").lower()
+
+
+    #User makes food choices
+    if choice == 'a':
+        price1=ap
+    if choice == 'b':
+        price1=bp
+    if choice == 'c':
+        price1=cp
+    if choice == 'd':
+        price1=dp
+    if choice == 'e':
+        price1=ep
+    if choice == 'f':
+        price1=fp
+    if choice == 'g':
+        price1=gp
+    if choice == 'h':
+        price1=hp
+    #Display drink menu
+    for drinks in drinkList:
+        print(drinks)
+    drink = input("Please choose a drink")
+    if drink == 'i':
+        price2=ip
+    if drink == 'j':
+        price2=jp
+    if drink == 'k':
+        price2=kp
+    #Print total value of the meal
+    print("Your total is $",(price1+price2))
+    #Exit program
+    sys.exit()
+
+main()

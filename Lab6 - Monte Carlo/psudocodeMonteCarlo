@@ -1,0 +1,19 @@
+import modules
+
+save the start time to a variable
+
+do the following loop using values between 4 and 8 (value is i):
+
+    create the dots_under_curve give it a value of 0
+    create a variable for the total number of dots (total_dots) set it to 10^i
+
+    do the following loop for each dot total_dots times:
+        set a random x value and save it
+        set a random y value and save it
+
+        if the square root of the sum of the x value squared and the y value squared < 1 do the following:
+            set the dots_under_curve variable to dots_under_curve + 1
+
+    print the number of darts thrown
+    print the Approximation of pi
+    print the computation time

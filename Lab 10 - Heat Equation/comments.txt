@@ -1,0 +1,28 @@
+Import required packages
+open the image file and show the grayscale image
+
+Name: get_color_temp()
+Description: takes the rgb value from the grayscale and prints out the temperature of the input pixel
+Parameters: x (the x coordinate of the pixel), y (the y coordinate of the pixel)
+Returns: None
+
+accesses the color map file and reads it to a list of values
+    open file for reading
+    quits if error in accessing file
+read the first line
+for each line in the list
+    break up each line into color variable lists
+
+convert the image into a numpy array, then to a standard list
+
+run the program for 100 timesteps and print each step
+    for each pixel, check it's neighbors and average the values
+                each of each pixel's neighbors
+                accounts for boundaries of the box
+                takes the average
+                This is an edge cell.
+
+takes each pixel value and converts it to an rgb value based on the color map
+turns the list back into a numpy array
+creates an image from the numpy array
+show final image

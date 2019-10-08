@@ -1,0 +1,8 @@
+New required test Neighborhood (Not Salty)
+house 200 -200 200 300 orange grey
+house 60 100 100 100 pink green
+house -200 70 100 130 purple yellow
+tree -280 -180 220 dark_grey
+tree 0 55 110 orange
+tree 60 -100 120 green
+tree 120 -50 80 yellow
